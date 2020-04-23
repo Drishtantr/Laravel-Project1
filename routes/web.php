@@ -11,6 +11,25 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
+
+// Route::get('/about', function () {
+//     return view('about');
+// });
+
+// Route::get('/contact', function () {
+//     return view('contact');
+// });
+
+Route::get('/', 'PagesController@gethome');
+Route::get('/about', 'PagesController@getabout');
+Route::get('/contact', 'PagesController@getcontact');
+
+
+
+Route::post('/contact/submit', 'MessagesController@submit');
+
+Route::get('/showmsg', 'MessagesController@getMessages');
+
